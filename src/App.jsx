@@ -83,7 +83,7 @@ export default function App() {
       }
 
       const { error } = await supabase.from('kain_purchases').insert([{
-  supplier_id: 1,
+  supplier_id: "1745ca9a-6afc-42af-bbc5-586ba63511d0",
   total_qty_yard: parseFloat(formData.quantity),
   total_cost: parseFloat(formData.price) * parseFloat(formData.quantity),
   shipping_cost: parseFloat(formData.shippingCost || 0),
