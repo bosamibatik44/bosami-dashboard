@@ -83,13 +83,16 @@ export default function App() {
       }
 
       const { error } = await supabase.from('kain_purchases').insert([{
-        supplier_id: 1,
-        quantity_yard: parseFloat(formData.quantity),
-        price_per_unit: parseFloat(formData.price),
-        shipping_cost: parseFloat(formData.shippingCost || 0),
-        purchase_date: new Date().toISOString(),
-        status: 'terima'
-      }])
+  supplier_id: 1,
+  total_qty_yard: parseFloat(formData.quantity),
+  total_cost: parseFloat(formData.price) * parseFloat(formData.quantity),
+  shipping_cost: parseFloat(formData.shippingCost || 0),
+  order_date: new Date().toISOString(),
+  receive_date: new Date().toISOString(),
+  payment_status: 'unpaid',
+  order_type: 'Mandiri',
+  status: 'active'
+}])
 
       if (error) throw error
 
