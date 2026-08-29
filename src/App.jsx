@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
 // Supabase initialization
-const SUPABASE_URL = 'https://akeepbcdwilkvfcreivr.supabase.co'
-const SUPABASE_KEY = import.meta.env.REACT_APP_SUPABASE_KEY
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 export default function App() {
